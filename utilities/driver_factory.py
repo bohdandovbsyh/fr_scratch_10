@@ -17,6 +17,7 @@ class DriverFactory:
             chrome_options = Options()
             if is_headless:
                 chrome_options.add_argument("--headless")
+                chrome_options.add_argument("--no-sandbox")
             driver = Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         elif int(driver_id) == 2:
             driver = Firefox(service=Service(GeckoDriverManager().install()))
